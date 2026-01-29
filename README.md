@@ -15,7 +15,18 @@ Average Wait Time: Shows the average waiting time (in minutes), helping assess o
 Patient Satisfaction Score: Represents overall patient experience and service quality.
 
 
+we are using Xalender Tble Formula and DAX Formulas :
+Calendar Table Formula
+         = List.Dates(#date(2023,01,01),731,#duration(1,0,0,0))
+
+DAX Formula for Age Group : 
+=IF([Patient Age]>=70,"70-79",IF([Patient Age]>=60,"60-69",IF([Patient Age]>=45,"45-59",IF([Patient Age]>=30,"30-44",IF([Patient Age]>=15,"15-29",IF([Patient Age]>=5,"05-14","0-4"))))))
+
+DAX Formula For Patient Attend Status :
+=IF([Patient Waittime]<30,"Within Time","Delay")
+
 Visual Insights
+
 Patient Attendance Status:
 Pie chart comparing On-time vs Delayed patient attendance, enabling quick identification of service delays.
 
@@ -31,28 +42,20 @@ Horizontal bar chart showing the number of patients referred to different depart
 
 Interactivity & Filters
 Month Selector: Allows users to view data month-wise.
-
 Year Toggle (2023 / 2024): Enables year-to-year comparison for trend analysis.
 
 
 Purpose & Use Case
 This dashboard is ideal for:
-
 Monitoring emergency room performance
-
 Improving patient wait times and satisfaction
-
 Understanding demographic patterns
-
 Optimizing departmental resource allocation
 
 
 Tools & Skills Demonstrated
 
 Data Visualization & Dashboard Design
-
 Healthcare Data Analysis
-
 KPI Tracking & Reporting
-
 Interactive Filters and User-friendly Layout
